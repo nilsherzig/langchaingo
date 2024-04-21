@@ -84,7 +84,7 @@ func (a *ConversationalAgent) Plan(
 		ctx,
 		a.Chain,
 		fullInputs,
-		chains.WithStopWords([]string{"\nObservation:", "\n\tObservation:"}),
+		chains.WithStopWords([]string{"\nObservation:", "\n\tObservation:", "<|eot_id|>"}),
 		chains.WithStreamingFunc(stream),
 	)
 	if err != nil {
